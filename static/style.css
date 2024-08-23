@@ -1,0 +1,187 @@
+/* Using Google Fonts - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+}
+
+body {
+    background: #F1F1F1;
+}
+
+*,
+html {
+    --primary-gradient: linear-gradient(135deg, rgba(8, 79, 146, 0.9), rgba(26, 141, 219, 0.9)); /* Dark blue to lighter blue */
+    --secondary-gradient: linear-gradient(135deg, rgba(217, 83, 79, 0.9), rgba(255, 137, 126, 0.9)); /* Dark red to lighter red */
+    --text-color: #333; /* Dark gray text color */
+}
+
+/* CHATBOX */
+.chatbox {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+p {
+    padding: 5px;
+}
+
+/* CONTENT IS CLOSED */
+.chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 300px;
+    height: 350px;
+    z-index: -1;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENT IS OPEN */
+.chatbox--active {
+    transform: translateY(-40px);
+    z-index: 100;
+    opacity: 1;
+}
+
+#logo {
+    width: 50px;
+    margin-left: -30px;
+    /* padding-right: 10px; */
+}
+
+/* BUTTON */
+.chatbox__button {
+    text-align: right;
+}
+
+.chat-img {
+    height: 50px;
+    width: 50px;
+}
+
+.send__button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* HEADER */
+.chatbox__header {
+    position: sticky;
+    top: 0;
+    background: var(--primary-gradient);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    margin: 10px;
+}
+
+.chatbox__image--header {
+    margin: 2px;
+}
+
+.chatbox__heading--header {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.chatbox__description--header {
+    font-size: .9rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* MESSAGES */
+.chatbox__messages {
+    margin-top: auto;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    padding: 0 20px;
+}
+
+.messages__item {
+    margin-top: 10px;
+    padding: 8px 12px;
+    max-width: 70%;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.messages__item--visitor,
+.messages__item--typing {
+    background: var(--primary-gradient);
+    align-self: flex-start;
+}
+
+.messages__item--operator {
+    background: var(--secondary-gradient);
+    align-self: flex-end;
+    color: white;
+}
+
+/* FOOTER */
+.chatbox__footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--primary-gradient);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: 10px;
+}
+
+.chatbox__footer input {
+    width: 85%;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.chatbox__send--footer {
+    color: white;
+}
+
+.chatbox__button button,
+.chatbox__button button:focus,
+.chatbox__button button:visited {
+    padding: 10px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Icon size adjustment */
+.send__button img {
+    width: 20px;
+    height: 20px;
+}
